@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, EmailStr
+from user.role import RoleEnum
 
 class UserBase(BaseModel):
     username: str
     email: EmailStr
+    isActive: bool = True
+    role: RoleEnum
 
 app = FastAPI()
 
